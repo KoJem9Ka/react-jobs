@@ -3,12 +3,13 @@
   display       : flex;
   overflow      : hidden;
   align-items   : center;
+  user-select   : none;
   text-align    : center;
   color         : #5BA4A4;
   border-radius : .4rem;
   background    : #EEF6F6;
 
-  &:not(.new):not(.featured):not(.deletable):hover {
+  &:not(.new):not(.active):not(.featured):not(.deletable):hover {
     cursor     : pointer;
     color      : white;
     background : #5BA4A4;
@@ -39,4 +40,10 @@
 .featured {
   color      : white;
   background : #2C3A3A;
+}
+
+.active {
+  //background : blue;
+  font-weight : 700;
+  filter      : brightness(.8) contrast(1.4) saturate(2);
 }

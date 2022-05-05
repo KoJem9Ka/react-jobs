@@ -5,7 +5,7 @@ import TagsList from '../../TagsList/TagsList'
 import { TFilter } from '../../../store/filter/reducer'
 import { TagItemProps } from '../../TagsList/TagItem/TagItem'
 
-const JobCard: React.FC<TPosition> = ({
+const JobCard: React.FC<TPosition & { filters: TFilter[] }> = ({
   company,
   contract,
   featured,
@@ -19,6 +19,7 @@ const JobCard: React.FC<TPosition> = ({
   postedAt,
   role,
   tools,
+  filters,
 }) => {
   const marks: TagItemProps[] = [];
   [ '1d ago', '2d ago', '3d ago', '4d ago' ].some( item => item === postedAt ) && marks.push( { special: 'new' } )
@@ -37,7 +38,7 @@ const JobCard: React.FC<TPosition> = ({
         <h2>{position}</h2>
         <div>{[ postedAt, contract, location1 ].join( ' • ' )}</div>
       </div>
-      <TagsList tags={tags.map( tag => ({ tag }) )}/>
+      <TagsList tags={tags.map( tag => ({ tagText: tag, active: filters.includes( tag ) }) )}/>
     </div>
   )
 }

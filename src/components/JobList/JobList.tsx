@@ -13,7 +13,7 @@ const JobList: React.FC = () => {
 
   return (
     <div className={styles.JobList}>
-      {positions.map( position => <JobCard key={position.id} {...position}/> )}
+      {positions.map( position => <JobCard key={position.id} {...position} filters={filters}/> )}
     </div>
   )
 }

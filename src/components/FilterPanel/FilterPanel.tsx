@@ -16,7 +16,7 @@ const FilterPanel: React.FC = () => {
   return (
     <>
       {filters.length > 0 && <div className={styles.FilterSearchBox}>
-        <TagsList tags={filters.map( filter => ({ tag: filter, special: 'removable' }) )}/>
+        <TagsList tags={filters.map( filter => ({ tagText: filter, special: 'removable' }) )}/>
         <div className={styles.clearButton} onClick={clearHandler}>Очистить</div>
       </div>
       }

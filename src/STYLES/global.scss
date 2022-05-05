@@ -11,8 +11,27 @@ body {
 }
 
 header {
-  height     : 156px;
-  background : url(../assets/bg-header-desktop.svg) #5BA4A4;
+  display         : flex;
+  align-items     : center;
+  justify-content : right;
+  height          : 156px;
+  padding         : 2rem;
+  background      : url(../assets/bg-header-desktop.svg) #5BA4A4;
+
+  a {
+    font-size       : 2rem;
+    font-weight     : 500;
+    padding         : .3rem .6rem;
+    text-decoration : none;
+    color           : white;
+    border-radius   : 1rem;
+
+    &:hover {
+      color      : #5BA4A4;
+      background : white;
+
+    }
+  }
 }
 
 main {

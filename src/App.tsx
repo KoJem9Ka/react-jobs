@@ -14,7 +14,9 @@ const App = () => {
 
   return (
     <>
-      <header/>
+      <header>
+        <a href='https://github.com/KoJem9Ka/react-jobs'>Repo</a>
+      </header>
       <main>
         <FilterPanel/>
         <JobList/>

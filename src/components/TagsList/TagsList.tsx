@@ -8,7 +8,7 @@ type TagsListProps = {
 
 const TagsList: React.FC<TagsListProps> = ({ tags }) => (
   <div className={styles.TagsList}>
-    {tags.map( tagItem => <TagItem key={tagItem.tag} {...tagItem}/> )}
+    {tags.map( tag => <TagItem key={tag.tagText} {...tag}/> )}
   </div>
 )
 
