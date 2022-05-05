@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-jobs/static/css/main.bb445498.css",
-    "main.js": "/react-jobs/static/js/main.8e9ff43a.js",
+    "main.js": "/react-jobs/static/js/main.3af24326.js",
     "static/media/bg-header-desktop.svg": "/react-jobs/static/media/bg-header-desktop.48a43eab7bf2fea432fc.svg",
     "index.html": "/react-jobs/index.html",
     "static/media/icon-remove.svg": "/react-jobs/static/media/icon-remove.280898bff3e6228596700f320629b81f.svg",
     "main.bb445498.css.map": "/react-jobs/static/css/main.bb445498.css.map",
-    "main.8e9ff43a.js.map": "/react-jobs/static/js/main.8e9ff43a.js.map"
+    "main.3af24326.js.map": "/react-jobs/static/js/main.3af24326.js.map"
   },
   "entrypoints": [
     "static/css/main.bb445498.css",
-    "static/js/main.8e9ff43a.js"
+    "static/js/main.3af24326.js"
   ]
 }
