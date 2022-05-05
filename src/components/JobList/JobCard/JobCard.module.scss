@@ -1,0 +1,35 @@
+.JobCard {
+  display         : flex;
+  overflow        : hidden;
+  align-items     : center;
+  justify-content : space-between;
+  padding         : 1rem;
+  border-radius   : 1rem;
+  background      : white;
+  box-shadow      : 0 0 1rem rgba(0, 0, 0, 0.25);
+
+  & > * + * {
+    margin-left : 1rem;
+  }
+
+  div:last-child {
+    color : gray;
+  }
+}
+
+.main {
+  display         : flex;
+  align-self      : stretch;
+  flex-direction  : column;
+  flex-grow       : 1;
+  justify-content : space-between;
+
+  div:first-child {
+    display     : flex;
+    align-items : center;
+
+    & > * + * {
+      margin-left : .5rem;
+    }
+  }
+}

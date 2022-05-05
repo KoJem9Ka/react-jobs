@@ -1,0 +1,46 @@
+.FilterSearchBox {
+  position        : relative;
+  display         : flex;
+  justify-content : space-between;
+  margin-top      : -4rem;
+  margin-bottom   : 2rem;
+  border          : 3px solid #5BA4A4;
+  border-radius   : .5rem;
+  background      : white;
+  box-shadow      : 0 .4rem 1rem rgba(0, 0, 0, 0.45);
+
+  &, & > * {
+    z-index : 1;
+  }
+
+  &:after {
+    $border-width : 10px;
+    position      : absolute;
+    z-index       : -1;
+    top           : -3px - $border-width;
+    right         : -3px - $border-width;
+    bottom        : -3px - $border-width;
+    left          : -3px - $border-width;
+    content       : '';
+    border        : $border-width solid rgba(255, 255, 255, 0.4);
+    border-radius : 1.1rem;
+  }
+
+  & > *:first-child {
+    flex-grow : 1;
+    padding   : .5rem;
+  }
+}
+
+.clearButton {
+  display     : flex;
+  align-items : center;
+  padding     : 0 1rem;
+  cursor      : pointer;
+  color       : #2C3A3A;
+
+  &:hover {
+    color      : white;
+    background : #5BA4A4;
+  }
+}

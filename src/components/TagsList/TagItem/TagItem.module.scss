@@ -1,0 +1,42 @@
+.TagItem {
+  line-height   : 1.5rem;
+  display       : flex;
+  overflow      : hidden;
+  align-items   : center;
+  text-align    : center;
+  color         : #5BA4A4;
+  border-radius : .4rem;
+  background    : #EEF6F6;
+
+  &:not(.new):not(.featured):not(.deletable):hover {
+    cursor     : pointer;
+    color      : white;
+    background : #5BA4A4;
+  }
+
+  & > span {
+    margin : 0 .8rem;
+  }
+
+  div {
+    line-height : 2.2rem;
+    width       : 2rem;
+    height      : 2rem;
+    cursor      : pointer;
+    background  : #5BA4A4;
+
+    &:hover {
+      background : #2C3A3A;
+    }
+  }
+}
+
+.new {
+  color      : white;
+  background : #5AA2A2;
+}
+
+.featured {
+  color      : white;
+  background : #2C3A3A;
+}

@@ -1,0 +1,22 @@
+@import './reset';
+
+body {
+  font-family : "Rubik Light", sans-serif;
+}
+
+#root {
+  display        : flex;
+  flex-direction : column;
+  min-height     : 100vh;
+}
+
+header {
+  height     : 156px;
+  background : url(../assets/bg-header-desktop.svg) #5BA4A4;
+}
+
+main {
+  flex-grow  : 1;
+  padding    : 2rem calc((100vw - 1920px * 0.5) / 2);
+  background : #EFFAFA;
+}
