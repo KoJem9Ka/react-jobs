@@ -5,7 +5,7 @@ import { addPositions } from './store/positions/actions'
 import JobList from './components/JobList/JobList'
 import FilterPanel from './components/FilterPanel/FilterPanel'
 
-const App = () => {
+const App: React.FC = () => {
   const dispatch = useDispatch()
 
   useEffect( () => {
