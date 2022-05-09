@@ -1,15 +1,15 @@
 import React from 'react'
 import styles from './JobList.module.scss'
 import { useSelector } from 'react-redux'
-import { selectFilteredPositions } from '../../store/positions/selectors'
-import { selectFilters } from '../../store/filter/selectors'
-import { TStoreState } from '../../store/store'
-import { TPosition } from '../../store/positions/reducer'
 import JobCard from './JobCard/JobCard'
+import { TPosition } from '../../store/types'
+import { TAppState } from '../../store/store'
+import { selectFilters } from '../../store/features/filter-slice'
+import { selectFilteredPositions } from '../../store/features/positions-slice'
 
 const JobList: React.FC = () => {
   const filters = useSelector( selectFilters )
-  const positions = useSelector<TStoreState, TPosition[]>( state => selectFilteredPositions( state, filters ) )
+  const positions = useSelector<TAppState, TPosition[]>( state => selectFilteredPositions( state ) )
 
   return (
     <div className={styles.JobList}>

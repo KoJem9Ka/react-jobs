@@ -1,15 +1,13 @@
 import React from 'react'
 import styles from './JobCard.module.scss'
-import { TPosition } from '../../../store/positions/reducer'
 import TagsList from '../../TagsList/TagsList'
-import { TFilter } from '../../../store/filter/reducer'
 import { TagItemProps } from '../../TagsList/TagItem/TagItem'
+import { TFilter, TPosition } from '../../../store/types'
 
 const JobCard: React.FC<TPosition & { filters: TFilter[] }> = ({
   company,
   contract,
   featured,
-  id,
   languages,
   level,
   location: location1,
@@ -21,8 +19,8 @@ const JobCard: React.FC<TPosition & { filters: TFilter[] }> = ({
   tools,
   filters,
 }) => {
-  const marks: TagItemProps[] = [];
-  [ '1d ago', '2d ago', '3d ago', '4d ago' ].some( item => item === postedAt ) && marks.push( { special: 'new' } )
+  const marks: TagItemProps[] = []
+  new1 && marks.push( { special: 'new' } )
   featured && marks.push( { special: 'featured' } )
 
   const tags: TFilter[] = [ role, level, ...languages, ...tools ]

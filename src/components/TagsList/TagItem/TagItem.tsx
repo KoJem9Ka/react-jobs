@@ -2,8 +2,8 @@ import React, { useCallback } from 'react'
 import styles from './TagItem.module.scss'
 import { ReactComponent as Remove } from '../../../assets/icon-remove.svg'
 import { useDispatch } from 'react-redux'
-import { addFilter, removeFilter } from '../../../store/filter/actions'
-import { TFilter } from '../../../store/filter/reducer'
+import { TFilter } from '../../../store/types'
+import { actionAddFilter, actionRemoveFilter } from '../../../store/features/filter-slice'
 
 export type TagItemProps = {
   tagText?: TFilter
@@ -29,8 +29,8 @@ const TagItem: React.FC<TagItemProps> = ({ tagText, special, active = false }) =
       tagText = 'FEATURED'
   }
 
-  const onAddFilter = useCallback( () => dispatch( addFilter( tagText! ) ), [ tagText ] )
-  const onRemoveFilter = useCallback( () => dispatch( removeFilter( tagText! ) ), [ tagText ] )
+  const onAddFilter = useCallback( () => dispatch( actionAddFilter( tagText ) ), [ tagText ] )
+  const onRemoveFilter = useCallback( () => dispatch( actionRemoveFilter( tagText ) ), [ tagText ] )
 
   return (
     <span className={classes.join( ' ' )} onClick={!special && onAddFilter || undefined}>

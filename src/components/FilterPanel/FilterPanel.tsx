@@ -2,16 +2,15 @@ import React from 'react'
 import styles from './FilterPanel.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import TagsList from '../TagsList/TagsList'
-import { clearFilters } from '../../store/filter/actions'
-import { selectFilters } from '../../store/filter/selectors'
-import { TStoreState } from '../../store/store'
-import { TFilter } from '../../store/filter/reducer'
+import { TFilter } from '../../store/types'
+import { TAppState } from '../../store/store'
+import { actionClearFilters, selectFilters } from '../../store/features/filter-slice'
 
 const FilterPanel: React.FC = () => {
-  const filters = useSelector<TStoreState, TFilter[]>( selectFilters )
+  const filters = useSelector<TAppState, TFilter[]>( selectFilters )
   // const filters: TFilter[] = ['123', '456']
   const dispatch = useDispatch()
-  const clearHandler = () => dispatch( clearFilters() )
+  const clearHandler = (): void => void dispatch( actionClearFilters() )
 
   return (
     <>

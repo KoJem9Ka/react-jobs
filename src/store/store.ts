@@ -1,32 +1,14 @@
-import { combineReducers, createStore } from '@reduxjs/toolkit'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import { positionsReducer as positions, TReducerStatePositions } from './positions/reducer'
-import { filtersReducer as filters, TReducerStateFilters } from './filter/reducer'
+import { configureStore } from '@reduxjs/toolkit'
+import { positionsSlice } from './features/positions-slice'
+import { filterSlice } from './features/filter-slice'
 
-import { persistReducer, persistStore } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
-
-const rootReducer = combineReducers( {
-  positions,
-  filters,
+export const store = configureStore( {
+  reducer: {
+    positions: positionsSlice.reducer,
+    filters: filterSlice.reducer,
+  },
+  devTools: true,
 } )
 
-const persistConfig = {
-  key: 'root',
-  storage,
-  // whitelist: [ 'positions' ],
-  // blacklist: [ 'filters' ],
-  blacklist: [ 'positions' ],
-}
-
-const persistedReducer = persistReducer( persistConfig, rootReducer )
-
-export const store = createStore( persistedReducer, composeWithDevTools() )
-
-export const persistor = persistStore( store )
-
-// export type TStoreState = ReturnType<typeof store.getState>
-export type TStoreState = {
-  positions: TReducerStatePositions
-  filters: TReducerStateFilters
-}
+export type TAppState = ReturnType<typeof store.getState>
+export type TAppDispatch = typeof store.dispatch
